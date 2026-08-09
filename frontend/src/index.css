@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+/* ============================================================
+   SystemPulse Theme Tokens
+   Dark navy professional enterprise observability palette.
+   ============================================================ */
+
+@theme {
+  /* Surfaces — deep navy */
+  --color-sp-bg: #020617;        /* slate-950 */
+  --color-sp-bg-deep: #01050f;   /* deepest navy */
+  --color-sp-panel: #0f172a;     /* slate-900 */
+  --color-sp-panel-2: #1e293b;   /* slate-800 */
+  --color-sp-panel-3: #334155;   /* slate-700 */
+
+  /* Borders */
+  --color-sp-edge: #1e293b;      /* slate-800 */
+  --color-sp-edge-strong: #334155; /* slate-700 */
+
+  /* Text */
+  --color-sp-text: #f1f5f9;      /* slate-100 */
+  --color-sp-text-2: #94a3b8;    /* slate-400 */
+  --color-sp-text-3: #64748b;    /* slate-500 */
+  --color-sp-text-4: #475569;    /* slate-600 */
+
+  /* Status — healthy */
+  --color-sp-healthy: #34d399;   /* emerald-400 */
+  --color-sp-healthy-deep: #10b981; /* emerald-500 */
+
+  /* Primary SystemPulse accent — blue */
+  --color-sp-teal: #3b82f6;      /* blue-500 */
+
+  /* Status — warning */
+  --color-sp-warning: #fbbf24;   /* amber-400 */
+  --color-sp-warning-deep: #f59e0b; /* amber-500 */
+
+  /* Status — critical */
+  --color-sp-critical: #f87171;  /* red-400 */
+  --color-sp-critical-deep: #ef4444; /* red-500 */
+
+  /* Restrained state rings — no neon */
+  --shadow-glow-critical: 0 0 0 1px rgba(248, 113, 113, 0.14),
+    0 0 10px rgba(248, 113, 113, 0.08);
+  --shadow-glow-warning: 0 0 0 1px rgba(251, 191, 36, 0.14),
+    0 0 8px rgba(251, 191, 36, 0.07);
+  --shadow-glow-healthy: 0 0 0 1px rgba(52, 211, 153, 0.12),
+    0 0 8px rgba(52, 211, 153, 0.06);
+
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+
+@layer base {
+  * {
+    border-color: var(--color-sp-edge);
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    background-color: var(--color-sp-bg);
+    color: var(--color-sp-text);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: rgba(59, 130, 246, 0.28);
+    color: var(--color-sp-text);
+  }
+
+  /* Subtle dark scrollbars for panels */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-sp-edge-strong) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--color-sp-edge-strong);
+    border-radius: 8px;
+  }
+}
+
+/* ============================================================
+   Utilities
+   ============================================================ */
+
+/* Thin top accent used on panels with a focus */
+@utility border-top-accent {
+  border-top-width: 2px;
+  border-top-color: var(--color-sp-edge-strong);
+}
+
+/* Restrained focus ring, not neon */
+@utility focus-ring {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.35);
+}
+
+/* Small uppercase label for panel fields */
+@utility eyebrow {
+  font-size: 0.6875rem;
+  line-height: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  color: var(--color-sp-text-4);
+}
+
+/* Prevent the app from growing wider than the viewport */
+html,
+body {
+  overflow-x: hidden;
+}

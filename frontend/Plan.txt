@@ -1,0 +1,93 @@
+SYSTEMPULSE FRONTEND — PLAN
+
+GOAL
+Build a professional dark-theme frontend for SystemPulse using the EXISTING backend only.
+
+PAGES
+1. Command Center (/)
+   - System status
+   - Response time
+   - CPU
+   - Memory
+   - Risk
+   - Severity
+   - Trend
+   - Root cause
+   - Recommended action
+   - Recent activity
+   - Live/latest backend data
+
+2. Anomaly Simulator (/simulator)
+   - One main action: INJECT ANOMALY
+   - Calls POST http://127.0.0.1:8002/simulate/slow
+   - Shows the transition from normal → anomaly detected → critical
+   - Existing POST /simulate/normal can be used to restore normal operation
+   - No additional anomaly types
+
+3. Intelligence (/intelligence)
+   - Risk score
+   - Anomaly
+   - Severity
+   - Trend
+   - Root cause
+   - Explanation
+   - Recommended action
+   - Response time / CPU / memory
+   - Metric slopes
+
+4. Telemetry (/telemetry)
+   - Response-time chart
+   - CPU chart
+   - Memory chart
+   - Risk/history
+   - Recent telemetry table
+   - Clearly show anomaly and recovery points
+
+NAVIGATION
+Command Center | Simulator | Intelligence | Telemetry
+Right side: System Online indicator
+
+BACKEND
+Product service:
+GET  http://127.0.0.1:8002/
+GET  http://127.0.0.1:8002/products
+POST http://127.0.0.1:8002/simulate/slow
+POST http://127.0.0.1:8002/simulate/normal
+
+Monitoring API:
+GET  http://127.0.0.1:8003/health
+POST http://127.0.0.1:8003/api/metrics
+GET  http://127.0.0.1:8003/api/metrics/latest
+GET  http://127.0.0.1:8003/api/intelligence/latest
+GET  http://127.0.0.1:8003/api/intelligence/history
+
+DEMO STORY
+Healthy → Inject Anomaly → Detect → Analyze → Recover
+
+DESIGN
+- Dark professional enterprise observability dashboard
+- Deep charcoal / green-black background
+- Dark green/teal surfaces
+- Teal/emerald = healthy
+- Amber = warning
+- Red/coral = critical
+- Subtle borders and glow
+- Clean typography
+- Restrained animations
+- No gaming/cyberpunk look
+- No excessive neon
+- No childish UI
+- No unnecessary gradients
+- No excessive glassmorphism
+
+BUILD ORDER
+1. Setup
+2. Global theme
+3. App shell/navigation
+4. API service layer
+5. Command Center
+6. Simulator
+7. Intelligence
+8. Telemetry
+9. Loading/error/empty states
+10. Responsive polish

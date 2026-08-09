@@ -1,0 +1,61 @@
+SYSTEMPULSE FRONTEND — TECH STACK
+
+Framework:
+- React
+- Vite
+
+Language:
+- JavaScript / JSX
+
+Styling:
+- Tailwind CSS
+
+Icons:
+- Lucide React
+
+Charts:
+- Recharts
+
+Routing:
+- React Router
+
+HTTP:
+- Fetch API preferred
+- Axios is acceptable if needed
+
+State:
+- React hooks/state
+- No Redux unless genuinely necessary
+
+Backend:
+- Product Service: http://127.0.0.1:8002
+- Monitoring API: http://127.0.0.1:8003
+
+Recommended dependencies:
+- react
+- react-dom
+- react-router-dom
+- lucide-react
+- recharts
+- tailwindcss
+
+Frontend must NOT contain:
+- Python
+- FastAPI
+- PostgreSQL
+- psycopg2
+- ML models
+- PKL files
+- model training
+- anomaly detection logic
+
+The backend already handles:
+- telemetry
+- anomaly detection
+- risk calculation
+- trend calculation
+- root-cause reasoning
+- recommendations
+
+Frontend responsibility:
+Consume backend data and present it clearly.

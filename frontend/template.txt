@@ -1,0 +1,72 @@
+SYSTEMPULSE FRONTEND — FEATURE TEMPLATE
+
+FEATURE NAME:
+-
+
+PURPOSE:
+-
+
+ROUTE:
+-
+
+BACKEND ENDPOINTS:
+-
+
+DATA USED:
+-
+
+USER ACTIONS:
+-
+
+UI SECTIONS:
+1.
+2.
+3.
+4.
+
+COMPONENTS:
+-
+
+STATES:
+Loading:
+-
+
+Empty:
+-
+
+Normal:
+-
+
+Warning:
+-
+
+Critical:
+-
+
+Error:
+-
+
+RESPONSIVE:
+Desktop:
+-
+
+Tablet:
+-
+
+Small screen:
+-
+
+DESIGN NOTES:
+-
+
+ACCEPTANCE CHECKLIST:
+[ ] Real backend data
+[ ] No fake production values
+[ ] Loading state
+[ ] Error state
+[ ] Empty state
+[ ] Responsive
+[ ] No console errors
+[ ] Matches SystemPulse theme
+[ ] Reusable components
+[ ] No backend changes

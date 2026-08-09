@@ -1,0 +1,50 @@
+SYSTEMPULSE FRONTEND — RULES
+
+1. FRONTEND ONLY. Never modify the existing backend.
+2. Existing FastAPI backend is the source of truth.
+3. Never invent endpoints or response fields.
+4. Use exact fields:
+   response_time_ms, cpu_percent, memory_percent, risk, anomaly,
+   severity, trend, root_cause, explanation, recommended_action,
+   latency_slope, cpu_slope, memory_slope.
+5. Do not create fake live intelligence data.
+6. Do not create PKL/model files in the frontend.
+7. Do not add authentication.
+8. Do not add extra anomaly scenarios.
+9. Do not change intelligence logic from the frontend.
+10. Do not hardcode live dashboard values.
+
+11. Keep API calls in one centralized API/service layer.
+12. Components must not repeat backend URLs.
+13. Handle loading, errors, empty history and unavailable backend states.
+14. Poll only where live updates are needed.
+15. Avoid aggressive polling.
+
+16. Dark professional theme only.
+17. Enterprise observability aesthetic, not gaming.
+18. Prefer charcoal/deep green surfaces over pure black.
+19. Teal/emerald = healthy.
+20. Amber = warning.
+21. Red/coral = critical.
+22. No neon cyberpunk effects.
+23. No excessive gradients.
+24. No excessive glassmorphism.
+25. Charts must remain readable.
+26. Animations must be subtle and purposeful.
+27. Critical states may have subtle glow/pulse, never flashing.
+
+28. Build reusable components.
+29. Pages handle layout; API logic belongs in the service layer.
+30. Reuse metric cards, status badges, severity indicators, charts and panels.
+31. Avoid giant components.
+32. Use clear naming.
+
+33. Desktop-first dashboard.
+34. Support tablet and smaller screens.
+35. No horizontal overflow.
+
+36. No console errors.
+37. No broken routes.
+38. No unused imports.
+39. Keep dependencies minimal.
+40. Test every page against the real local backend.

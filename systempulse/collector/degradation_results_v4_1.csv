@@ -1,0 +1,181 @@
+sequence,latency,cpu,memory,risk,severity,trend,likely_cause,prediction,actual_phase,actual_anomaly
+1,40.99,11.59,77.52,0.03,NORMAL,MIXED / STABLE,Memory pressure,No strong failure trajectory detected,stable,0
+2,43.18,11.4,76.84,3.85,NORMAL,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,stable,0
+3,43.44,14.51,76.68,16.66,NORMAL,MIXED / STABLE,CPU pressure,No strong failure trajectory detected,stable,0
+4,41.48,10.92,76.7,12.85,NORMAL,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,stable,0
+5,41.0,6.67,75.72,3.25,NORMAL,RECOVERING,Latency degradation,System is recovering,stable,0
+6,39.5,9.47,77.38,3.9,NORMAL,RECOVERING,Memory pressure,System is recovering,stable,0
+7,38.92,8.38,78.33,5.22,NORMAL,MIXED / STABLE,Memory pressure,No strong failure trajectory detected,stable,0
+8,40.44,12.92,76.04,5.64,NORMAL,MIXED / STABLE,Memory pressure,No strong failure trajectory detected,stable,0
+9,39.91,13.15,76.28,12.71,NORMAL,MIXED / STABLE,CPU pressure,No strong failure trajectory detected,stable,0
+10,41.93,11.12,77.0,17.94,NORMAL,DETERIORATING,CPU pressure,Potential degradation developing,stable,0
+11,40.04,18.58,77.25,25.41,EARLY WARNING,DETERIORATING,CPU pressure,Early deterioration detected,stable,0
+12,39.22,15.6,76.31,16.34,NORMAL,MIXED / STABLE,CPU pressure,No strong failure trajectory detected,stable,0
+13,41.97,7.35,76.25,13.84,NORMAL,MIXED / STABLE,CPU pressure,No strong failure trajectory detected,stable,0
+14,42.08,15.55,77.47,20.3,NORMAL,DETERIORATING,CPU pressure,Potential degradation developing,stable,0
+15,41.55,12.53,76.18,8.82,NORMAL,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,stable,0
+16,40.41,12.16,78.23,12.04,NORMAL,MIXED / STABLE,Memory pressure,No strong failure trajectory detected,stable,0
+17,42.77,8.35,77.67,11.56,NORMAL,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,stable,0
+18,41.37,11.71,77.93,12.95,NORMAL,MIXED / STABLE,Memory pressure,No strong failure trajectory detected,stable,0
+19,44.49,16.64,76.79,22.52,NORMAL,DETERIORATING,CPU pressure,Potential degradation developing,stable,0
+20,41.78,14.94,78.27,17.42,NORMAL,DETERIORATING,CPU pressure,Potential degradation developing,stable,0
+21,41.54,13.49,76.63,16.36,NORMAL,DETERIORATING,CPU pressure,Potential degradation developing,stable,0
+22,40.14,16.59,78.62,12.49,NORMAL,MIXED / STABLE,CPU pressure,No strong failure trajectory detected,stable,0
+23,42.67,17.27,77.85,18.28,NORMAL,MIXED / STABLE,CPU pressure,No strong failure trajectory detected,stable,0
+24,41.56,15.44,78.82,14.99,NORMAL,MIXED / STABLE,CPU pressure,No strong failure trajectory detected,stable,0
+25,43.0,19.16,75.52,15.08,NORMAL,MIXED / STABLE,CPU pressure,No strong failure trajectory detected,stable,0
+26,44.98,14.83,77.4,16.88,NORMAL,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,stable,0
+27,43.53,8.7,77.49,11.5,NORMAL,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,stable,0
+28,44.24,19.2,77.28,17.72,NORMAL,MIXED / STABLE,CPU pressure,No strong failure trajectory detected,stable,0
+29,41.83,13.37,78.45,13.78,NORMAL,MIXED / STABLE,Memory pressure,No strong failure trajectory detected,stable,0
+30,44.44,13.39,78.15,16.06,NORMAL,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,stable,0
+31,44.06,17.98,77.21,19.12,NORMAL,MIXED / STABLE,CPU pressure,No strong failure trajectory detected,stable,0
+32,43.25,14.0,76.62,8.8,NORMAL,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,stable,0
+33,44.76,16.07,77.82,18.1,NORMAL,MIXED / STABLE,CPU pressure,No strong failure trajectory detected,stable,0
+34,43.71,11.14,77.51,8.85,NORMAL,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,stable,0
+35,43.6,13.08,77.74,9.69,NORMAL,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,stable,0
+36,45.39,21.25,78.04,28.01,EARLY WARNING,DETERIORATING,CPU pressure,Early deterioration detected,stable,0
+37,45.19,15.47,76.39,20.57,NORMAL,DETERIORATING,Latency degradation,Potential degradation developing,stable,0
+38,44.68,15.98,79.92,23.24,NORMAL,DETERIORATING,CPU pressure,Potential degradation developing,stable,0
+39,44.44,16.8,77.95,21.79,NORMAL,DETERIORATING,CPU pressure,Potential degradation developing,stable,0
+40,42.37,19.43,78.6,21.25,NORMAL,MIXED / STABLE,CPU pressure,No strong failure trajectory detected,stable,0
+41,46.78,13.27,79.12,17.86,NORMAL,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,early_degradation,0
+42,42.97,18.42,79.89,9.95,NORMAL,MIXED / STABLE,CPU pressure,No strong failure trajectory detected,early_degradation,0
+43,45.07,15.61,78.36,18.33,NORMAL,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,early_degradation,0
+44,47.4,13.31,78.47,14.3,NORMAL,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,early_degradation,0
+45,47.18,20.04,77.82,20.77,NORMAL,MIXED / STABLE,CPU pressure,No strong failure trajectory detected,early_degradation,0
+46,54.99,16.93,78.43,27.65,EARLY WARNING,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,early_degradation,0
+47,54.37,16.24,79.01,26.11,EARLY WARNING,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,early_degradation,0
+48,56.94,15.76,79.11,23.56,NORMAL,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,early_degradation,0
+49,55.37,23.59,78.11,39.13,EARLY WARNING,DETERIORATING,CPU pressure,Early deterioration detected,early_degradation,0
+50,52.17,23.46,79.48,35.94,EARLY WARNING,DETERIORATING,CPU pressure,Early deterioration detected,early_degradation,0
+51,57.78,23.59,78.84,40.51,EARLY WARNING,DETERIORATING,Latency degradation,Early deterioration detected,early_degradation,0
+52,58.95,24.09,78.95,42.77,EARLY WARNING,DETERIORATING,CPU pressure,Early deterioration detected,early_degradation,0
+53,65.03,25.28,78.7,45.65,WARNING,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,early_degradation,0
+54,62.68,21.59,80.42,43.05,EARLY WARNING,DETERIORATING,Latency degradation,Early deterioration detected,early_degradation,0
+55,65.48,22.71,80.7,43.76,EARLY WARNING,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,early_degradation,0
+56,64.41,28.29,81.59,53.72,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,early_degradation,0
+57,63.52,24.22,79.5,46.5,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,early_degradation,0
+58,62.84,26.91,80.62,48.05,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,early_degradation,0
+59,67.65,30.27,80.49,52.66,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,early_degradation,0
+60,72.87,27.65,82.8,58.16,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,early_degradation,0
+61,71.3,26.53,79.9,52.46,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,early_degradation,0
+62,72.04,29.09,81.47,55.5,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,early_degradation,0
+63,73.24,30.2,80.36,58.14,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,early_degradation,0
+64,67.25,29.73,81.86,52.55,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,early_degradation,0
+65,74.76,27.99,81.45,56.48,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,early_degradation,0
+66,76.62,29.73,81.57,54.9,WARNING,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,early_degradation,0
+67,76.6,29.61,81.87,60.05,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,early_degradation,0
+68,79.76,36.94,82.57,63.04,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,early_degradation,0
+69,73.37,31.53,82.27,56.49,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,early_degradation,0
+70,82.06,36.55,85.08,65.62,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,early_degradation,0
+71,82.28,38.41,82.76,66.16,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,warning,1
+72,85.1,34.92,82.81,66.92,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,warning,1
+73,81.55,36.01,82.03,64.07,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,warning,1
+74,87.6,44.53,81.13,61.74,WARNING,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,warning,1
+75,92.73,33.61,82.45,63.93,WARNING,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,warning,1
+76,97.08,39.5,82.17,62.77,WARNING,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,warning,1
+77,91.1,42.21,82.66,62.96,WARNING,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,warning,1
+78,97.95,41.17,82.93,67.34,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,warning,1
+79,109.96,43.8,82.04,68.77,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,warning,1
+80,102.67,40.77,84.54,67.58,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,warning,1
+81,100.01,43.28,84.47,66.7,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,warning,1
+82,111.16,40.88,84.01,65.35,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,warning,1
+83,106.38,43.38,85.9,65.59,WARNING,DETERIORATING,Combined resource pressure,System is moving toward critical degradation,warning,1
+84,113.63,42.42,85.42,64.39,WARNING,DETERIORATING,Combined resource pressure,System is moving toward critical degradation,warning,1
+85,125.87,50.17,83.68,65.11,WARNING,DETERIORATING,Latency degradation,System is moving toward critical degradation,warning,1
+86,113.39,51.73,84.54,62.95,WARNING,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,warning,1
+87,121.25,51.12,84.57,63.91,WARNING,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,warning,1
+88,120.67,39.93,84.7,62.54,WARNING,MIXED / STABLE,Latency degradation,No strong failure trajectory detected,warning,1
+89,121.89,46.77,87.03,67.39,WARNING,DETERIORATING,Combined resource pressure,System is moving toward critical degradation,warning,1
+90,116.86,50.06,86.04,66.19,WARNING,DETERIORATING,Combined resource pressure,System is moving toward critical degradation,warning,1
+91,137.52,47.93,87.07,63.01,WARNING,MIXED / STABLE,Combined resource pressure,No strong failure trajectory detected,warning,1
+92,130.76,50.16,86.71,62.91,WARNING,MIXED / STABLE,Combined resource pressure,No strong failure trajectory detected,warning,1
+93,134.43,52.16,86.61,67.39,WARNING,DETERIORATING,Combined resource pressure,System is moving toward critical degradation,warning,1
+94,132.91,55.17,87.29,69.17,WARNING,DETERIORATING,Combined resource pressure,System is moving toward critical degradation,warning,1
+95,148.87,51.98,88.67,68.64,WARNING,DETERIORATING,Combined resource pressure,System is moving toward critical degradation,warning,1
+96,126.65,56.1,87.64,67.31,WARNING,DETERIORATING,Combined resource pressure,System is moving toward critical degradation,warning,1
+97,144.76,55.55,87.21,65.9,WARNING,DETERIORATING,Combined resource pressure,System is moving toward critical degradation,warning,1
+98,141.59,56.51,88.27,67.15,WARNING,DETERIORATING,Combined resource pressure,System is moving toward critical degradation,warning,1
+99,150.22,57.06,88.51,68.17,WARNING,DETERIORATING,Combined resource pressure,System is moving toward critical degradation,warning,1
+100,152.3,62.44,88.5,68.77,WARNING,DETERIORATING,Combined resource pressure,System is moving toward critical degradation,warning,1
+101,143.78,58.32,88.6,67.25,WARNING,DETERIORATING,Combined resource pressure,System is moving toward critical degradation,critical,1
+102,163.46,60.97,88.37,69.5,WARNING,DETERIORATING,Combined resource pressure,System is moving toward critical degradation,critical,1
+103,177.93,60.29,88.99,70.79,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+104,174.08,62.45,89.71,71.46,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+105,192.1,66.58,90.15,72.58,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+106,193.31,67.22,89.13,72.99,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+107,204.99,65.82,89.73,74.74,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+108,216.6,64.79,91.6,74.24,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+109,207.95,64.63,91.13,71.27,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+110,236.59,71.18,90.99,72.46,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+111,236.06,67.65,90.82,69.22,WARNING,DETERIORATING,Combined resource pressure,System is moving toward critical degradation,critical,1
+112,236.54,74.3,90.92,70.42,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+113,242.99,71.45,91.64,70.12,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+114,254.68,70.98,91.78,70.09,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+115,274.01,72.96,91.49,72.73,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+116,282.55,71.17,91.01,71.06,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+117,277.59,75.91,92.66,73.72,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+118,318.43,80.16,92.56,75.04,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+119,304.88,75.61,92.95,73.92,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+120,309.26,80.62,92.58,72.93,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+121,330.79,85.29,93.43,74.04,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+122,337.68,83.79,93.47,75.16,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+123,343.46,82.8,94.15,74.77,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+124,334.81,83.87,94.74,72.41,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+125,382.79,87.71,96.34,77.72,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+126,351.49,88.48,95.04,74.86,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+127,415.1,84.47,94.5,74.57,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+128,371.29,81.56,95.03,72.31,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+129,376.52,89.42,96.0,72.41,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+130,437.52,92.85,95.54,74.94,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,critical,1
+131,382.03,91.48,94.94,64.48,WARNING,MIXED / STABLE,Combined resource pressure,No strong failure trajectory detected,failure,1
+132,453.86,93.96,95.78,74.46,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,failure,1
+133,394.61,94.9,96.22,71.64,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,failure,1
+134,475.06,86.48,95.99,76.14,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,failure,1
+135,463.28,91.83,96.27,70.34,CRITICAL,MIXED / STABLE,Combined resource pressure,No strong failure trajectory detected,failure,1
+136,493.86,88.9,96.68,70.53,CRITICAL,MIXED / STABLE,Combined resource pressure,No strong failure trajectory detected,failure,1
+137,497.71,94.07,97.52,76.22,CRITICAL,MIXED / STABLE,Combined resource pressure,No strong failure trajectory detected,failure,1
+138,481.82,88.35,98.13,70.74,CRITICAL,MIXED / STABLE,Combined resource pressure,No strong failure trajectory detected,failure,1
+139,535.06,91.12,98.5,75.04,CRITICAL,MIXED / STABLE,Combined resource pressure,No strong failure trajectory detected,failure,1
+140,545.24,97.33,97.48,77.77,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,failure,1
+141,615.38,99.48,97.38,83.25,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,failure,1
+142,601.55,96.57,98.83,83.38,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,failure,1
+143,561.03,97.11,98.74,79.1,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,failure,1
+144,552.04,91.92,96.42,69.47,WARNING,MIXED / STABLE,Combined resource pressure,No strong failure trajectory detected,failure,1
+145,612.69,98.05,99.41,71.02,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,failure,1
+146,639.2,100.0,97.26,71.15,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,failure,1
+147,597.05,96.57,98.83,63.35,WARNING,MIXED / STABLE,Combined resource pressure,No strong failure trajectory detected,failure,1
+148,667.33,90.96,98.61,69.29,WARNING,MIXED / STABLE,Combined resource pressure,No strong failure trajectory detected,failure,1
+149,639.58,99.59,99.14,76.34,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,failure,1
+150,667.1,96.46,98.15,76.58,CRITICAL,DETERIORATING,Combined resource pressure,HIGH probability of imminent failure,failure,1
+151,179.44,72.87,89.21,34.53,EARLY WARNING,RECOVERING,Combined resource pressure,System is recovering,recovery,0
+152,179.94,66.62,89.02,33.97,EARLY WARNING,RECOVERING,Combined resource pressure,System is recovering,recovery,0
+153,170.12,63.31,88.87,33.41,EARLY WARNING,RECOVERING,Combined resource pressure,System is recovering,recovery,0
+154,156.58,70.51,88.99,33.96,EARLY WARNING,RECOVERING,Combined resource pressure,System is recovering,recovery,0
+155,156.4,63.47,88.53,32.82,EARLY WARNING,RECOVERING,Combined resource pressure,System is recovering,recovery,0
+156,155.85,62.88,88.88,32.87,EARLY WARNING,RECOVERING,Combined resource pressure,System is recovering,recovery,0
+157,149.04,57.51,87.71,32.72,EARLY WARNING,RECOVERING,Combined resource pressure,System is recovering,recovery,0
+158,131.52,52.9,88.68,32.84,EARLY WARNING,RECOVERING,Combined resource pressure,System is recovering,recovery,0
+159,155.99,54.91,87.7,33.8,EARLY WARNING,RECOVERING,Combined resource pressure,System is recovering,recovery,0
+160,141.83,63.1,87.79,33.81,EARLY WARNING,RECOVERING,Combined resource pressure,System is recovering,recovery,0
+161,134.31,49.2,85.27,33.5,EARLY WARNING,RECOVERING,Combined resource pressure,System is recovering,recovery,0
+162,132.02,48.01,85.07,32.93,EARLY WARNING,RECOVERING,Latency degradation,System is recovering,recovery,0
+163,122.13,45.24,87.21,33.74,EARLY WARNING,RECOVERING,Combined resource pressure,System is recovering,recovery,0
+164,127.09,46.67,86.7,34.22,EARLY WARNING,RECOVERING,Combined resource pressure,System is recovering,recovery,0
+165,117.69,42.31,86.39,33.09,EARLY WARNING,RECOVERING,Combined resource pressure,System is recovering,recovery,0
+166,115.8,39.99,84.68,31.8,EARLY WARNING,RECOVERING,Latency degradation,System is recovering,recovery,0
+167,103.54,37.16,85.22,32.41,EARLY WARNING,RECOVERING,Combined resource pressure,System is recovering,recovery,0
+168,113.7,35.32,84.59,32.87,EARLY WARNING,RECOVERING,Latency degradation,System is recovering,recovery,0
+169,96.08,36.26,83.32,32.71,EARLY WARNING,RECOVERING,Latency degradation,System is recovering,recovery,0
+170,90.73,36.08,82.78,31.56,EARLY WARNING,RECOVERING,Latency degradation,System is recovering,recovery,0
+171,91.57,33.99,82.91,32.66,EARLY WARNING,RECOVERING,Latency degradation,System is recovering,recovery,0
+172,81.97,30.61,83.36,31.96,EARLY WARNING,RECOVERING,Latency degradation,System is recovering,recovery,0
+173,83.42,27.62,82.49,32.38,EARLY WARNING,RECOVERING,Latency degradation,System is recovering,recovery,0
+174,79.79,23.75,82.5,28.0,EARLY WARNING,RECOVERING,Latency degradation,System is recovering,recovery,0
+175,70.01,28.68,81.11,26.17,EARLY WARNING,RECOVERING,Latency degradation,System is recovering,recovery,0
+176,61.8,20.29,81.42,17.7,NORMAL,RECOVERING,Latency degradation,System is recovering,recovery,0
+177,64.27,20.67,81.55,19.66,NORMAL,RECOVERING,Latency degradation,System is recovering,recovery,0
+178,54.07,21.39,79.72,15.25,NORMAL,RECOVERING,Latency degradation,System is recovering,recovery,0
+179,52.71,19.94,79.66,13.06,NORMAL,RECOVERING,Latency degradation,System is recovering,recovery,0
+180,49.04,21.02,79.54,12.11,NORMAL,RECOVERING,CPU pressure,System is recovering,recovery,0

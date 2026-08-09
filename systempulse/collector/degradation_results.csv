@@ -1,0 +1,181 @@
+sequence,latency,cpu,memory,risk,severity,trend,likely_cause,actual_phase,actual_anomaly
+1,40.99,11.59,77.52,0.04,NORMAL,STABLE,Memory pressure,stable,0
+2,43.18,11.4,76.84,1.26,NORMAL,STABLE,Latency degradation,stable,0
+3,43.44,14.51,76.68,2.67,NORMAL,STABLE,Latency degradation,stable,0
+4,41.48,10.92,76.7,0.08,NORMAL,STABLE,Latency degradation,stable,0
+5,41.0,6.67,75.72,0.0,NORMAL,RECOVERING,Latency degradation,stable,0
+6,39.5,9.47,77.38,0.0,NORMAL,RECOVERING,Memory pressure,stable,0
+7,38.92,8.38,78.33,0.27,NORMAL,RECOVERING,Memory pressure,stable,0
+8,40.44,12.92,76.04,0.21,NORMAL,STABLE,Latency degradation,stable,0
+9,39.91,13.15,76.28,0.59,NORMAL,STABLE,Latency degradation,stable,0
+10,41.93,11.12,77.0,0.43,NORMAL,STABLE,Latency degradation,stable,0
+11,40.04,18.58,77.25,7.48,NORMAL,STABLE,CPU pressure,stable,0
+12,39.22,15.6,76.31,2.84,NORMAL,STABLE,CPU pressure,stable,0
+13,41.97,7.35,76.25,0.03,NORMAL,STABLE,Latency degradation,stable,0
+14,42.08,15.55,77.47,2.44,NORMAL,STABLE,CPU pressure,stable,0
+15,41.55,12.53,76.18,0.14,NORMAL,STABLE,Latency degradation,stable,0
+16,40.41,12.16,78.23,0.29,NORMAL,STABLE,Memory pressure,stable,0
+17,42.77,8.35,77.67,0.45,NORMAL,RECOVERING,Latency degradation,stable,0
+18,41.37,11.71,77.93,0.16,NORMAL,RECOVERING,Memory pressure,stable,0
+19,44.49,16.64,76.79,6.36,NORMAL,DETERIORATING,CPU pressure,stable,0
+20,41.78,14.94,78.27,2.33,NORMAL,STABLE,CPU pressure,stable,0
+21,41.54,13.49,76.63,0.49,NORMAL,STABLE,Latency degradation,stable,0
+22,40.14,16.59,78.62,4.43,NORMAL,STABLE,CPU pressure,stable,0
+23,42.67,17.27,77.85,5.34,NORMAL,STABLE,CPU pressure,stable,0
+24,41.56,15.44,78.82,2.79,NORMAL,DETERIORATING,CPU pressure,stable,0
+25,43.0,19.16,75.52,8.6,NORMAL,STABLE,CPU pressure,stable,0
+26,44.98,14.83,77.4,4.01,NORMAL,STABLE,Latency degradation,stable,0
+27,43.53,8.7,77.49,1.22,NORMAL,STABLE,Latency degradation,stable,0
+28,44.24,19.2,77.28,9.5,NORMAL,STABLE,CPU pressure,stable,0
+29,41.83,13.37,78.45,0.32,NORMAL,RECOVERING,Memory pressure,stable,0
+30,44.44,13.39,78.15,2.21,NORMAL,STABLE,Latency degradation,stable,0
+31,44.06,17.98,77.21,7.92,NORMAL,DETERIORATING,CPU pressure,stable,0
+32,43.25,14.0,76.62,0.95,NORMAL,STABLE,Latency degradation,stable,0
+33,44.76,16.07,77.82,5.79,NORMAL,STABLE,CPU pressure,stable,0
+34,43.71,11.14,77.51,1.28,NORMAL,RECOVERING,Latency degradation,stable,0
+35,43.6,13.08,77.74,1.24,NORMAL,RECOVERING,Latency degradation,stable,0
+36,45.39,21.25,78.04,14.07,NORMAL,DETERIORATING,CPU pressure,stable,0
+37,45.19,15.47,76.39,5.27,NORMAL,STABLE,Latency degradation,stable,0
+38,44.68,15.98,79.92,6.34,NORMAL,DETERIORATING,CPU pressure,stable,0
+39,44.44,16.8,77.95,6.36,NORMAL,DETERIORATING,CPU pressure,stable,0
+40,42.37,19.43,78.6,8.28,NORMAL,RECOVERING,CPU pressure,stable,0
+41,46.78,13.27,79.12,4.64,NORMAL,STABLE,Latency degradation,early_degradation,0
+42,42.97,18.42,79.89,7.74,NORMAL,STABLE,CPU pressure,early_degradation,0
+43,45.07,15.61,78.36,5.29,NORMAL,STABLE,Latency degradation,early_degradation,0
+44,47.4,13.31,78.47,5.2,NORMAL,STABLE,Latency degradation,early_degradation,0
+45,47.18,20.04,77.82,13.88,NORMAL,STABLE,CPU pressure,early_degradation,0
+46,54.99,16.93,78.43,17.18,NORMAL,STABLE,Latency degradation,early_degradation,0
+47,54.37,16.24,79.01,15.88,NORMAL,DETERIORATING,Latency degradation,early_degradation,0
+48,56.94,15.76,79.11,17.52,NORMAL,DETERIORATING,Latency degradation,early_degradation,0
+49,55.37,23.59,78.11,27.02,EARLY WARNING,DETERIORATING,CPU pressure,early_degradation,0
+50,52.17,23.46,79.48,24.25,NORMAL,STABLE,CPU pressure,early_degradation,0
+51,57.78,23.59,78.84,29.68,EARLY WARNING,DETERIORATING,Latency degradation,early_degradation,0
+52,58.95,24.09,78.95,31.43,EARLY WARNING,DETERIORATING,Latency degradation,early_degradation,0
+53,65.03,25.28,78.7,38.82,EARLY WARNING,DETERIORATING,Latency degradation,early_degradation,0
+54,62.68,21.59,80.42,31.66,EARLY WARNING,STABLE,Latency degradation,early_degradation,0
+55,65.48,22.71,80.7,35.79,EARLY WARNING,STABLE,Latency degradation,early_degradation,0
+56,64.41,28.29,81.59,42.38,EARLY WARNING,DETERIORATING,Latency degradation,early_degradation,0
+57,63.52,24.22,79.5,35.5,EARLY WARNING,STABLE,Latency degradation,early_degradation,0
+58,62.84,26.91,80.62,39.27,EARLY WARNING,STABLE,Latency degradation,early_degradation,0
+59,67.65,30.27,80.49,45.19,EARLY WARNING,STABLE,Latency degradation,early_degradation,0
+60,72.87,27.65,82.8,50.62,WARNING,DETERIORATING,Latency degradation,early_degradation,0
+61,71.3,26.53,79.9,46.9,EARLY WARNING,DETERIORATING,Latency degradation,early_degradation,0
+62,72.04,29.09,81.47,49.58,EARLY WARNING,DETERIORATING,Latency degradation,early_degradation,0
+63,73.24,30.2,80.36,50.16,WARNING,STABLE,Latency degradation,early_degradation,0
+64,67.25,29.73,81.86,44.89,EARLY WARNING,STABLE,Latency degradation,early_degradation,0
+65,74.76,27.99,81.45,51.79,WARNING,DETERIORATING,Latency degradation,early_degradation,0
+66,76.62,29.73,81.57,53.64,WARNING,STABLE,Latency degradation,early_degradation,0
+67,76.6,29.61,81.87,53.83,WARNING,STABLE,Latency degradation,early_degradation,0
+68,79.76,36.94,82.57,57.82,WARNING,DETERIORATING,Latency degradation,early_degradation,0
+69,73.37,31.53,82.27,51.03,WARNING,DETERIORATING,Latency degradation,early_degradation,0
+70,82.06,36.55,85.08,60.2,WARNING,DETERIORATING,Latency degradation,early_degradation,0
+71,82.28,38.41,82.76,59.99,WARNING,DETERIORATING,Latency degradation,warning,1
+72,85.1,34.92,82.81,61.98,WARNING,DETERIORATING,Latency degradation,warning,1
+73,81.55,36.01,82.03,58.87,WARNING,STABLE,Latency degradation,warning,1
+74,87.6,44.53,81.13,61.7,WARNING,STABLE,Latency degradation,warning,1
+75,92.73,33.61,82.45,61.87,WARNING,STABLE,Latency degradation,warning,1
+76,97.08,39.5,82.17,62.31,WARNING,STABLE,Latency degradation,warning,1
+77,91.1,42.21,82.66,62.32,WARNING,DETERIORATING,Latency degradation,warning,1
+78,97.95,41.17,82.93,61.98,WARNING,DETERIORATING,Latency degradation,warning,1
+79,109.96,43.8,82.04,62.83,WARNING,STABLE,Latency degradation,warning,1
+80,102.67,40.77,84.54,62.74,WARNING,DETERIORATING,Latency degradation,warning,1
+81,100.01,43.28,84.47,62.46,WARNING,DETERIORATING,Latency degradation,warning,1
+82,111.16,40.88,84.01,62.13,WARNING,STABLE,Latency degradation,warning,1
+83,106.38,43.38,85.9,62.28,WARNING,STABLE,Latency degradation,warning,1
+84,113.63,42.42,85.42,62.89,WARNING,DETERIORATING,Latency degradation,warning,1
+85,125.87,50.17,83.68,63.46,WARNING,STABLE,Latency degradation,warning,1
+86,113.39,51.73,84.54,63.44,WARNING,STABLE,Latency degradation,warning,1
+87,121.25,51.12,84.57,63.45,WARNING,STABLE,Latency degradation,warning,1
+88,120.67,39.93,84.7,62.12,WARNING,STABLE,Latency degradation,warning,1
+89,121.89,46.77,87.03,62.54,WARNING,RECOVERING,Latency degradation,warning,1
+90,116.86,50.06,86.04,62.45,WARNING,STABLE,Latency degradation,warning,1
+91,137.52,47.93,87.07,63.36,WARNING,DETERIORATING,Latency degradation,warning,1
+92,130.76,50.16,86.71,64.06,WARNING,DETERIORATING,Latency degradation,warning,1
+93,134.43,52.16,86.61,63.7,WARNING,STABLE,Latency degradation,warning,1
+94,132.91,55.17,87.29,63.78,WARNING,DETERIORATING,Latency degradation,warning,1
+95,148.87,51.98,88.67,64.0,WARNING,DETERIORATING,Latency degradation,warning,1
+96,126.65,56.1,87.64,63.25,WARNING,DETERIORATING,Latency degradation,warning,1
+97,144.76,55.55,87.21,63.17,WARNING,DETERIORATING,Latency degradation,warning,1
+98,141.59,56.51,88.27,63.36,WARNING,DETERIORATING,Latency degradation,warning,1
+99,150.22,57.06,88.51,63.68,WARNING,DETERIORATING,Latency degradation,warning,1
+100,152.3,62.44,88.5,64.75,WARNING,DETERIORATING,Latency degradation,warning,1
+101,143.78,58.32,88.6,63.54,WARNING,DETERIORATING,Latency degradation,critical,1
+102,163.46,60.97,88.37,64.09,WARNING,DETERIORATING,Latency degradation,critical,1
+103,177.93,60.29,88.99,64.76,WARNING,DETERIORATING,Latency degradation,critical,1
+104,174.08,62.45,89.71,65.11,WARNING,DETERIORATING,Latency degradation,critical,1
+105,192.1,66.58,90.15,66.51,WARNING,DETERIORATING,Latency degradation,critical,1
+106,193.31,67.22,89.13,65.47,WARNING,DETERIORATING,Latency degradation,critical,1
+107,204.99,65.82,89.73,65.5,WARNING,DETERIORATING,Latency degradation,critical,1
+108,216.6,64.79,91.6,66.15,WARNING,DETERIORATING,Latency degradation,critical,1
+109,207.95,64.63,91.13,64.88,WARNING,STABLE,Latency degradation,critical,1
+110,236.59,71.18,90.99,65.91,WARNING,DETERIORATING,Latency degradation,critical,1
+111,236.06,67.65,90.82,65.79,WARNING,DETERIORATING,Latency degradation,critical,1
+112,236.54,74.3,90.92,65.9,WARNING,STABLE,Latency degradation,critical,1
+113,242.99,71.45,91.64,65.95,WARNING,DETERIORATING,Latency degradation,critical,1
+114,254.68,70.98,91.78,64.88,WARNING,DETERIORATING,Latency degradation,critical,1
+115,274.01,72.96,91.49,66.14,WARNING,DETERIORATING,Latency degradation,critical,1
+116,282.55,71.17,91.01,66.43,WARNING,STABLE,Latency degradation,critical,1
+117,277.59,75.91,92.66,66.58,WARNING,DETERIORATING,Latency degradation,critical,1
+118,318.43,80.16,92.56,67.8,WARNING,DETERIORATING,Latency degradation,critical,1
+119,304.88,75.61,92.95,66.87,WARNING,DETERIORATING,Latency degradation,critical,1
+120,309.26,80.62,92.58,66.53,WARNING,DETERIORATING,Latency degradation,critical,1
+121,330.79,85.29,93.43,67.15,WARNING,DETERIORATING,Latency degradation,critical,1
+122,337.68,83.79,93.47,66.3,WARNING,DETERIORATING,Latency degradation,critical,1
+123,343.46,82.8,94.15,67.48,WARNING,DETERIORATING,Latency degradation,critical,1
+124,334.81,83.87,94.74,66.17,WARNING,DETERIORATING,Latency degradation,critical,1
+125,382.79,87.71,96.34,67.51,WARNING,DETERIORATING,Latency degradation,critical,1
+126,351.49,88.48,95.04,66.69,WARNING,DETERIORATING,Latency degradation,critical,1
+127,415.1,84.47,94.5,68.49,WARNING,DETERIORATING,Latency degradation,critical,1
+128,371.29,81.56,95.03,67.05,WARNING,STABLE,Latency degradation,critical,1
+129,376.52,89.42,96.0,64.99,WARNING,STABLE,Latency degradation,critical,1
+130,437.52,92.85,95.54,68.35,WARNING,DETERIORATING,Latency degradation,critical,1
+131,382.03,91.48,94.94,65.46,WARNING,DETERIORATING,Latency degradation,failure,1
+132,453.86,93.96,95.78,69.75,WARNING,DETERIORATING,Latency degradation,failure,1
+133,394.61,94.9,96.22,66.55,WARNING,DETERIORATING,Latency degradation,failure,1
+134,475.06,86.48,95.99,66.89,WARNING,STABLE,Latency degradation,failure,1
+135,463.28,91.83,96.27,69.24,WARNING,STABLE,Latency degradation,failure,1
+136,493.86,88.9,96.68,68.51,WARNING,STABLE,Latency degradation,failure,1
+137,497.71,94.07,97.52,70.56,WARNING,DETERIORATING,Latency degradation,failure,1
+138,481.82,88.35,98.13,66.75,WARNING,DETERIORATING,Latency degradation,failure,1
+139,535.06,91.12,98.5,68.6,WARNING,STABLE,Latency degradation,failure,1
+140,545.24,97.33,97.48,69.02,WARNING,DETERIORATING,Latency degradation,failure,1
+141,615.38,99.48,97.38,72.93,WARNING,STABLE,Latency degradation,failure,1
+142,601.55,96.57,98.83,73.98,WARNING,DETERIORATING,Latency degradation,failure,1
+143,561.03,97.11,98.74,68.49,WARNING,DETERIORATING,Latency degradation,failure,1
+144,552.04,91.92,96.42,64.92,WARNING,RECOVERING,Latency degradation,failure,1
+145,612.69,98.05,99.41,65.71,WARNING,RECOVERING,Latency degradation,failure,1
+146,639.2,100.0,97.26,68.42,WARNING,STABLE,Latency degradation,failure,1
+147,597.05,96.57,98.83,69.56,WARNING,DETERIORATING,Latency degradation,failure,1
+148,667.33,90.96,98.61,70.58,WARNING,STABLE,Latency degradation,failure,1
+149,639.58,99.59,99.14,67.56,WARNING,STABLE,Latency degradation,failure,1
+150,667.1,96.46,98.15,67.7,WARNING,STABLE,Latency degradation,failure,1
+151,179.44,72.87,89.21,63.06,WARNING,RECOVERING,Latency degradation,recovery,0
+152,179.94,66.62,89.02,63.01,WARNING,RECOVERING,Latency degradation,recovery,0
+153,170.12,63.31,88.87,62.97,WARNING,RECOVERING,Latency degradation,recovery,0
+154,156.58,70.51,88.99,63.0,WARNING,RECOVERING,Latency degradation,recovery,0
+155,156.4,63.47,88.53,62.88,WARNING,RECOVERING,Latency degradation,recovery,0
+156,155.85,62.88,88.88,62.97,WARNING,RECOVERING,Latency degradation,recovery,0
+157,149.04,57.51,87.71,62.67,WARNING,RECOVERING,Latency degradation,recovery,0
+158,131.52,52.9,88.68,62.92,WARNING,RECOVERING,Latency degradation,recovery,0
+159,155.99,54.91,87.7,62.67,WARNING,RECOVERING,Latency degradation,recovery,0
+160,141.83,63.1,87.79,62.69,WARNING,RECOVERING,Latency degradation,recovery,0
+161,134.31,49.2,85.27,62.04,WARNING,RECOVERING,Latency degradation,recovery,0
+162,132.02,48.01,85.07,61.99,WARNING,RECOVERING,Latency degradation,recovery,0
+163,122.13,45.24,87.21,62.54,WARNING,RECOVERING,Latency degradation,recovery,0
+164,127.09,46.67,86.7,62.41,WARNING,RECOVERING,Latency degradation,recovery,0
+165,117.69,42.31,86.39,62.36,WARNING,RECOVERING,Latency degradation,recovery,0
+166,115.8,39.99,84.68,61.89,WARNING,RECOVERING,Latency degradation,recovery,0
+167,103.54,37.16,85.22,62.03,WARNING,RECOVERING,Latency degradation,recovery,0
+168,113.7,35.32,84.59,61.87,WARNING,RECOVERING,Latency degradation,recovery,0
+169,96.08,36.26,83.32,61.54,WARNING,RECOVERING,Latency degradation,recovery,0
+170,90.73,36.08,82.78,61.4,WARNING,RECOVERING,Latency degradation,recovery,0
+171,91.57,33.99,82.91,61.43,WARNING,RECOVERING,Latency degradation,recovery,0
+172,81.97,30.61,83.36,58.89,WARNING,RECOVERING,Latency degradation,recovery,0
+173,83.42,27.62,82.49,59.76,WARNING,RECOVERING,Latency degradation,recovery,0
+174,79.79,23.75,82.5,50.77,WARNING,RECOVERING,Latency degradation,recovery,0
+175,70.01,28.68,81.11,47.02,EARLY WARNING,RECOVERING,Latency degradation,recovery,0
+176,61.8,20.29,81.42,28.54,EARLY WARNING,RECOVERING,Latency degradation,recovery,0
+177,64.27,20.67,81.55,31.45,EARLY WARNING,RECOVERING,Latency degradation,recovery,0
+178,54.07,21.39,79.72,22.39,NORMAL,RECOVERING,Latency degradation,recovery,0
+179,52.71,19.94,79.66,19.0,NORMAL,RECOVERING,Latency degradation,recovery,0
+180,49.04,21.02,79.54,17.09,NORMAL,STABLE,CPU pressure,recovery,0
