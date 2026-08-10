@@ -1,4 +1,3 @@
-cat > systempulse/monitoring-api/main.py <<'PY'
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -8,6 +7,8 @@ import sys
 import os
 import asyncio
 import time
+import urllib.request
+
 
 # ============================================================
 # Make collector folder importable
@@ -24,14 +25,16 @@ COLLECTOR_PATH = os.path.abspath(
 if COLLECTOR_PATH not in sys.path:
     sys.path.append(COLLECTOR_PATH)
 
+
 # ============================================================
 # Import SystemPulse Intelligence Engine
 # ============================================================
 
 from intelligence_engine import SystemPulseIntelligence
 
+
 # ============================================================
-# Product service configuration
+# Configuration
 # ============================================================
 
 PRODUCT_SERVICE_URL = os.getenv(
@@ -40,8 +43,12 @@ PRODUCT_SERVICE_URL = os.getenv(
 )
 
 COLLECTION_INTERVAL_SECONDS = float(
-    os.getenv("COLLECTION_INTERVAL_SECONDS", "5")
+    os.getenv(
+        "COLLECTION_INTERVAL_SECONDS",
+        "5"
+    )
 )
+
 
 # ============================================================
 # FastAPI Application
@@ -53,8 +60,9 @@ app = FastAPI(
         "Backend API for SystemPulse monitoring, "
         "anomaly detection and predictive intelligence"
     ),
-    version="2.1"
+    version="2.2"
 )
+
 
 # ============================================================
 # CORS
@@ -63,21 +71,23 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-    "https://project-live-b2595.web.app",
-    "https://project-live-b2595.firebaseapp.com",
-    "http://localhost:5173",
-    "http://localhost:5174",
-],
+        "https://project-live-b2595.web.app",
+        "https://project-live-b2595.firebaseapp.com",
+        "http://localhost:5173",
+        "http://localhost:5174",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 # ============================================================
 # Intelligence Engine
 # ============================================================
 
 intelligence_engine = SystemPulseIntelligence()
+
 
 # ============================================================
 # Data Model
@@ -98,10 +108,12 @@ class MetricData(BaseModel):
 
 latest_metric = None
 metric_history = []
+intelligence_history = []
 
 MAX_HISTORY = 100
 
 latest_intelligence = None
+
 
 # ============================================================
 # Collector state
@@ -115,6 +127,7 @@ collector_task = None
 # ============================================================
 
 def process_metric(metric: MetricData):
+
     global latest_metric
     global latest_intelligence
 
@@ -133,7 +146,7 @@ def process_metric(metric: MetricData):
         metric_history.pop(0)
 
     # --------------------------------------------------------
-    # Send telemetry to Intelligence Engine
+    # Send telemetry to intelligence engine
     # --------------------------------------------------------
 
     intelligence_result = intelligence_engine.add_telemetry(
@@ -151,6 +164,11 @@ def process_metric(metric: MetricData):
         **intelligence_result
     }
 
+    intelligence_history.append(latest_intelligence)
+
+    if len(intelligence_history) > MAX_HISTORY:
+        intelligence_history.pop(0)
+
     return {
         "telemetry": latest_metric,
         "intelligence": latest_intelligence
@@ -162,83 +180,134 @@ def process_metric(metric: MetricData):
 # ============================================================
 
 async def collect_product_metrics():
-    """
-    Continuously calls the deployed product service and measures
-    its real response time.
 
-    This is what connects the product-service simulation to the
-    SystemPulse intelligence engine.
-    """
+    print(
+        "[SystemPulse collector] LOOP STARTED",
+        flush=True
+    )
 
-    global latest_metric
-    global latest_intelligence
+    print(
+        f"[SystemPulse collector] Target: "
+        f"{PRODUCT_SERVICE_URL}/products",
+        flush=True
+    )
 
-    import urllib.request
+    print(
+        f"[SystemPulse collector] Interval: "
+        f"{COLLECTION_INTERVAL_SECONDS}s",
+        flush=True
+    )
 
     while True:
+
         started = time.perf_counter()
 
         try:
-            url = f"{PRODUCT_SERVICE_URL.rstrip('/')}/products"
+
+            url = (
+                f"{PRODUCT_SERVICE_URL.rstrip('/')}"
+                "/products"
+            )
 
             request = urllib.request.Request(
                 url,
                 method="GET",
                 headers={
                     "Accept": "application/json",
-                    "User-Agent": "SystemPulse-Monitoring/2.1",
-                },
+                    "User-Agent": "SystemPulse-Monitoring/2.2"
+                }
             )
 
             status_code = None
             healthy = False
 
             try:
+
                 with urllib.request.urlopen(
                     request,
-                    timeout=10
+                    timeout=15
                 ) as response:
-                    status_code = response.status
-                    response.read()
-                    healthy = 200 <= response.status < 300
 
-            except Exception:
-                healthy = False
+                    status_code = response.status
+
+                    response.read()
+
+                    healthy = (
+                        200 <= response.status < 300
+                    )
+
+            except Exception as request_error:
+
+                print(
+                    "[SystemPulse collector] "
+                    f"Product request failed: "
+                    f"{request_error}",
+                    flush=True
+                )
 
             elapsed_ms = (
                 time.perf_counter() - started
             ) * 1000.0
 
             # ------------------------------------------------
-            # Use the existing baseline values from the
-            # intelligence engine.
+            # Product service currently does not expose CPU
+            # and memory telemetry.
             #
-            # Product service currently does not expose
-            # CPU/memory telemetry, so keep those values at
-            # the established baseline.
+            # Therefore use the intelligence engine baseline.
             # ------------------------------------------------
 
             metric = MetricData(
                 service="product-service",
-                response_time_ms=elapsed_ms,
-                cpu_percent=intelligence_engine.baseline_cpu,
-                memory_percent=intelligence_engine.baseline_memory,
+
+                response_time_ms=round(
+                    elapsed_ms,
+                    2
+                ),
+
+                cpu_percent=(
+                    intelligence_engine.baseline_cpu
+                ),
+
+                memory_percent=(
+                    intelligence_engine.baseline_memory
+                ),
+
                 status_code=status_code,
-                healthy=healthy,
+
+                healthy=healthy
             )
 
-            process_metric(metric)
+            result = process_metric(metric)
+
+            print(
+                "[SystemPulse collector] "
+                f"Metric collected: "
+                f"{elapsed_ms:.2f}ms "
+                f"status={status_code} "
+                f"healthy={healthy}",
+                flush=True
+            )
+
+            print(
+                "[SystemPulse collector] "
+                f"Intelligence: "
+                f"risk={result['intelligence'].get('risk')} "
+                f"severity={result['intelligence'].get('severity')} "
+                f"anomaly={result['intelligence'].get('anomaly')}",
+                flush=True
+            )
 
         except Exception as error:
-            # Collector must stay alive even if one polling
-            # attempt fails.
+
             print(
-                f"[SystemPulse collector] "
+                "[SystemPulse collector] "
                 f"collection error: {error}",
                 flush=True
             )
 
-        await asyncio.sleep(COLLECTION_INTERVAL_SECONDS)
+        await asyncio.sleep(
+            COLLECTION_INTERVAL_SECONDS
+        )
 
 
 # ============================================================
@@ -247,27 +316,58 @@ async def collect_product_metrics():
 
 @app.on_event("startup")
 async def startup_event():
+
     global collector_task
 
-    if collector_task is None:
+    print(
+        "==================================================",
+        flush=True
+    )
+
+    print(
+        "[SystemPulse] APPLICATION STARTUP",
+        flush=True
+    )
+
+    print(
+        f"[SystemPulse] Product service: "
+        f"{PRODUCT_SERVICE_URL}",
+        flush=True
+    )
+
+    print(
+        f"[SystemPulse] Collection interval: "
+        f"{COLLECTION_INTERVAL_SECONDS}s",
+        flush=True
+    )
+
+    # --------------------------------------------------------
+    # Start background collector
+    # --------------------------------------------------------
+
+    if (
+        collector_task is None
+        or collector_task.done()
+    ):
+
         collector_task = asyncio.create_task(
             collect_product_metrics()
         )
 
-    print(
-        "[SystemPulse collector] Started",
-        flush=True
-    )
+        print(
+            "[SystemPulse] BACKGROUND COLLECTOR CREATED",
+            flush=True
+        )
+
+    else:
+
+        print(
+            "[SystemPulse] Collector already running",
+            flush=True
+        )
 
     print(
-        f"[SystemPulse collector] "
-        f"Target: {PRODUCT_SERVICE_URL}/products",
-        flush=True
-    )
-
-    print(
-        f"[SystemPulse collector] "
-        f"Interval: {COLLECTION_INTERVAL_SECONDS}s",
+        "==================================================",
         flush=True
     )
 
@@ -278,12 +378,20 @@ async def startup_event():
 
 @app.get("/")
 def root():
+
     return {
         "system": "SystemPulse",
         "service": "monitoring-api",
         "status": "online",
-        "version": "2.1",
-        "collector": "active",
+        "version": "2.2",
+        "collector": (
+            "running"
+            if (
+                collector_task is not None
+                and not collector_task.done()
+            )
+            else "not running"
+        ),
         "product_service": PRODUCT_SERVICE_URL,
     }
 
@@ -294,6 +402,7 @@ def root():
 
 @app.get("/health")
 def health():
+
     return {
         "status": "healthy",
         "service": "monitoring-api",
@@ -307,11 +416,6 @@ def health():
 
 @app.post("/api/metrics")
 def receive_metrics(metric: MetricData):
-    """
-    Manual telemetry ingestion endpoint.
-
-    Existing clients can still POST metrics directly.
-    """
 
     return {
         "message": "Metric processed successfully",
@@ -320,13 +424,14 @@ def receive_metrics(metric: MetricData):
 
 
 # ============================================================
-# Get Latest Raw Metric
+# Latest Raw Metric
 # ============================================================
 
 @app.get("/api/metrics/latest")
 def get_latest_metric():
 
     if latest_metric is None:
+
         return {
             "message": "No metrics received yet"
         }
@@ -335,29 +440,44 @@ def get_latest_metric():
 
 
 # ============================================================
-# Get Latest Intelligence Result
+# Metric History
+# ============================================================
+
+@app.get("/api/metrics/history")
+def get_metric_history():
+
+    return {
+        "count": len(metric_history),
+        "history": metric_history
+    }
+
+
+# ============================================================
+# Latest Intelligence
 # ============================================================
 
 @app.get("/api/intelligence/latest")
 def get_latest_intelligence():
 
     if latest_intelligence is None:
+
         return {
-            "message": "No intelligence results available yet"
+            "message": (
+                "No intelligence results available yet"
+            )
         }
 
     return latest_intelligence
 
 
 # ============================================================
-# Get Intelligence History
+# Intelligence History
 # ============================================================
 
 @app.get("/api/intelligence/history")
 def get_intelligence_history():
 
     return {
-        "count": len(metric_history),
-        "history": metric_history
+        "count": len(intelligence_history),
+        "history": intelligence_history
     }
-PY
