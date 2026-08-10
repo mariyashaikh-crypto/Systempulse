@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional
 from datetime import datetime
@@ -20,13 +21,11 @@ COLLECTOR_PATH = os.path.abspath(
 if COLLECTOR_PATH not in sys.path:
     sys.path.append(COLLECTOR_PATH)
 
-
 # ============================================================
 # Import SystemPulse Intelligence Engine
 # ============================================================
 
 from intelligence_engine import SystemPulseIntelligence
-
 
 # ============================================================
 # FastAPI Application
@@ -41,6 +40,20 @@ app = FastAPI(
     version="2.0"
 )
 
+# ============================================================
+# CORS
+# ============================================================
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://project-live-b2595.web.app",
+        "https://project-live-b2595.firebaseapp.com",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # ============================================================
 # Intelligence Engine
@@ -48,38 +61,28 @@ app = FastAPI(
 
 intelligence_engine = SystemPulseIntelligence()
 
-
 # ============================================================
 # Data Model
 # ============================================================
 
 class MetricData(BaseModel):
-
     service: str
-
     response_time_ms: float
-
     cpu_percent: float
-
     memory_percent: float
-
     status_code: Optional[int] = None
-
     healthy: bool
-
 
 # ============================================================
 # Storage
 # ============================================================
 
 latest_metric = None
-
 metric_history = []
 
 MAX_HISTORY = 100
 
 latest_intelligence = None
-
 
 # ============================================================
 # Root Endpoint
@@ -87,7 +90,6 @@ latest_intelligence = None
 
 @app.get("/")
 def root():
-
     return {
         "system": "SystemPulse",
         "service": "monitoring-api",
@@ -95,20 +97,17 @@ def root():
         "version": "2.0"
     }
 
-
 # ============================================================
 # Health Endpoint
 # ============================================================
 
 @app.get("/health")
 def health():
-
     return {
         "status": "healthy",
         "service": "monitoring-api",
         "timestamp": datetime.now().isoformat()
     }
-
 
 # ============================================================
 # Receive Metrics
@@ -134,7 +133,6 @@ def receive_metrics(metric: MetricData):
     if len(metric_history) > MAX_HISTORY:
         metric_history.pop(0)
 
-
     # --------------------------------------------------------
     # Send telemetry to Intelligence Engine
     # --------------------------------------------------------
@@ -145,7 +143,6 @@ def receive_metrics(metric: MetricData):
         memory_percent=metric.memory_percent
     )
 
-
     # --------------------------------------------------------
     # Store intelligence result
     # --------------------------------------------------------
@@ -154,7 +151,6 @@ def receive_metrics(metric: MetricData):
         "timestamp": datetime.now().isoformat(),
         **intelligence_result
     }
-
 
     # --------------------------------------------------------
     # Return complete result
@@ -166,7 +162,6 @@ def receive_metrics(metric: MetricData):
         "intelligence": latest_intelligence
     }
 
-
 # ============================================================
 # Get Latest Raw Metric
 # ============================================================
@@ -175,13 +170,11 @@ def receive_metrics(metric: MetricData):
 def get_latest_metric():
 
     if latest_metric is None:
-
         return {
             "message": "No metrics received yet"
         }
 
     return latest_metric
-
 
 # ============================================================
 # Get Latest Intelligence Result
@@ -191,13 +184,11 @@ def get_latest_metric():
 def get_latest_intelligence():
 
     if latest_intelligence is None:
-
         return {
             "message": "No intelligence results available yet"
         }
 
     return latest_intelligence
-
 
 # ============================================================
 # Get Intelligence History
