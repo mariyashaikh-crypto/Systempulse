@@ -1,4 +1,4 @@
-<img width="1916" height="839" alt="image" src="https://github.com/user-attachments/assets/d55c0c00-6614-48d3-9d3b-fb0067ddc1c4" /># ⚡ SystemPulse
+# ⚡ SystemPulse
 
 ### AI-Powered System Observability & Anomaly Detection Platform
 
