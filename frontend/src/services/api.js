@@ -17,7 +17,7 @@ class ApiError extends Error {
 }
 
 // True when the backend returns a message-only payload
-// (e.g. "No metrics received yet") instead of real data.
+// such as "No metrics received yet".
 function isMessageOnly(payload) {
   return (
     payload &&
@@ -29,28 +29,37 @@ function isMessageOnly(payload) {
 
 async function request(path, options = {}) {
   const controller = new AbortController();
+
   const timeout = setTimeout(
     () => controller.abort(),
     options.timeout ?? DEFAULT_TIMEOUT_MS
   );
 
   let response;
+
   try {
     response = await fetch(path, {
       method: options.method ?? "GET",
       headers: {
         Accept: "application/json",
-        ...(options.body ? { "Content-Type": "application/json" } : {}),
+        ...(options.body
+          ? {
+              "Content-Type": "application/json",
+            }
+          : {}),
       },
-      body: options.body ? JSON.stringify(options.body) : undefined,
+      body: options.body
+        ? JSON.stringify(options.body)
+        : undefined,
       signal: controller.signal,
     });
   } catch (error) {
     if (error.name === "AbortError") {
       throw new ApiError("Request timed out");
     }
+
     throw new ApiError(
-      "Cannot reach backend. Is the local service running?",
+      "Cannot reach backend. Is the service running?",
       null
     );
   } finally {
@@ -66,17 +75,24 @@ async function request(path, options = {}) {
 
   const payload = await response.json();
 
-  // Message-only payloads mean "not available yet", not an error.
+  // Message-only payloads mean "not available yet",
+  // not a transport error.
   if (isMessageOnly(payload)) {
-    return { data: null, message: payload.message };
+    return {
+      data: null,
+      message: payload.message,
+    };
   }
 
-  return { data: payload, message: null };
+  return {
+    data: payload,
+    message: null,
+  };
 }
 
-// ------------------------------------------------------------
+// ============================================================
 // Monitoring API
-// ------------------------------------------------------------
+// ============================================================
 
 export async function getHealth() {
   return request(ENDPOINTS.health);
@@ -95,17 +111,34 @@ export async function getIntelligenceHistory() {
 }
 
 // ------------------------------------------------------------
-// Product Service
+// Send telemetry to the monitoring intelligence engine.
+// IMPORTANT: this uses POST /api/metrics, not
+// GET /api/metrics/latest.
 // ------------------------------------------------------------
+
+export async function sendMetric(metric) {
+  return request(ENDPOINTS.metrics, {
+    method: "POST",
+    body: metric,
+  });
+}
+
+// ============================================================
+// Product Service
+// ============================================================
 
 export async function getProducts() {
   return request(ENDPOINTS.products);
 }
 
 export async function simulateSlow() {
-  return request(ENDPOINTS.simulateSlow, { method: "POST" });
+  return request(ENDPOINTS.simulateSlow, {
+    method: "POST",
+  });
 }
 
 export async function simulateNormal() {
-  return request(ENDPOINTS.simulateNormal, { method: "POST" });
+  return request(ENDPOINTS.simulateNormal, {
+    method: "POST",
+  });
 }

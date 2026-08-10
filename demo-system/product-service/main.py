@@ -9,6 +9,7 @@ load_dotenv()
 
 app = FastAPI(title="SystemPulse Product Service")
 
+
 # ============================================================
 # CORS
 # ============================================================
@@ -16,6 +17,8 @@ app = FastAPI(title="SystemPulse Product Service")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:5174",
         "https://project-live-b2595.web.app",
         "https://project-live-b2595.firebaseapp.com",
     ],
@@ -24,19 +27,20 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 # ============================================================
 # DATABASE CONNECTION
 # ============================================================
 
 def get_db_connection():
-
     return psycopg2.connect(
         host=os.getenv("DB_HOST"),
         port=os.getenv("DB_PORT"),
         database=os.getenv("DB_NAME"),
         user=os.getenv("DB_USER"),
-        password=os.getenv("DB_PASSWORD")
+        password=os.getenv("DB_PASSWORD"),
     )
+
 
 # ============================================================
 # FAILURE SIMULATION
@@ -44,17 +48,18 @@ def get_db_connection():
 
 SIMULATE_DELAY = False
 
+
 # ============================================================
 # HOME
 # ============================================================
 
 @app.get("/")
 def home():
-
     return {
         "service": "product-service",
-        "status": "running"
+        "status": "running",
     }
+
 
 # ============================================================
 # GET ALL PRODUCTS
@@ -86,11 +91,12 @@ def get_products():
             {
                 "id": product[0],
                 "name": product[1],
-                "price": float(product[2])
+                "price": float(product[2]),
             }
             for product in products
-        ]
+        ],
     }
+
 
 # ============================================================
 # GET SINGLE PRODUCT
@@ -104,7 +110,7 @@ def get_product(product_id: int):
 
     cursor.execute(
         "SELECT id, name, price FROM products WHERE id = %s",
-        (product_id,)
+        (product_id,),
     )
 
     product = cursor.fetchone()
@@ -114,14 +120,15 @@ def get_product(product_id: int):
 
     if product is None:
         return {
-            "error": "Product not found"
+            "error": "Product not found",
         }
 
     return {
         "id": product[0],
         "name": product[1],
-        "price": float(product[2])
+        "price": float(product[2]),
     }
+
 
 # ============================================================
 # ENABLE FAILURE SIMULATION
@@ -136,8 +143,9 @@ def simulate_slow():
 
     return {
         "message": "Slow mode enabled",
-        "delay_seconds": 2
+        "delay_seconds": 2,
     }
+
 
 # ============================================================
 # DISABLE FAILURE SIMULATION
@@ -151,5 +159,5 @@ def simulate_normal():
     SIMULATE_DELAY = False
 
     return {
-        "message": "Normal mode enabled"
+        "message": "Normal mode enabled",
     }
