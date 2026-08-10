@@ -1,15 +1,13 @@
-import Sparkline from "./Sparkline";
 import { cn } from "../../utils/cn";
+import Sparkline from "./Sparkline";
 
-// Metric card: label, value, unit, optional sub-line, tone and
-// an optional trailing sparkline of recent history.
 export default function MetricCard({
   label,
   value,
-  unit,
+  unit = "",
   sub,
+  icon: Icon,
   tone,
-  icon,
   spark,
   sparkLabel,
   className = "",
@@ -17,39 +15,58 @@ export default function MetricCard({
   return (
     <div
       className={cn(
-        "rounded-lg border border-sp-edge bg-sp-panel p-4",
+        "rounded-xl border border-sp-border bg-sp-surface p-4",
+        tone?.panel,
         className
       )}
     >
-      <div className="flex items-center justify-between gap-2">
-        <p className="text-xs font-medium tracking-wide text-sp-text-3 uppercase">
+      <div className="flex items-center justify-between gap-3">
+        <p className="text-xs font-medium text-sp-text-3">
           {label}
         </p>
-        {icon && <span className="text-sp-text-3">{icon}</span>}
-      </div>
-      <p
-        className={cn(
-          "mt-2 text-2xl font-semibold tracking-tight tabular-nums text-sp-text",
-          tone?.text
+
+        {Icon && (
+          <span className="text-sp-text-3">
+            <Icon className="h-4 w-4" />
+          </span>
         )}
-      >
-        {value ?? "—"}
+      </div>
+
+      <div className="mt-2 flex items-baseline gap-1">
+        <span
+          className={cn(
+            "text-2xl font-semibold tracking-tight",
+            tone?.text ?? "text-sp-text-1"
+          )}
+        >
+          {value ?? "—"}
+        </span>
+
         {unit && (
-          <span className="ml-1 text-sm font-normal text-sp-text-3">
+          <span className="text-xs text-sp-text-3">
             {unit}
           </span>
         )}
-      </p>
+      </div>
+
       {sub && (
-        <p className="mt-1.5 text-xs leading-relaxed text-sp-text-3">
+        <p className="mt-1 text-xs text-sp-text-3">
           {sub}
         </p>
       )}
+
       {spark && (
         <div className="mt-3">
-          <Sparkline data={spark} tone={tone} height={34} />
+          <Sparkline
+            data={spark}
+            tone={tone}
+            height={34}
+          />
+
           {sparkLabel && (
-            <p className="mt-1.5 text-[11px] text-sp-text-4">{sparkLabel}</p>
+            <p className="mt-1.5 text-[11px] text-sp-text-4">
+              {sparkLabel}
+            </p>
           )}
         </div>
       )}
