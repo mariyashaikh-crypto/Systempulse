@@ -7,10 +7,9 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-Styling-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 
-
 ### Real-Time System Observability & Predictive Anomaly Intelligence
 
-### 📡 Monitor Smarter. Detect Earlier. Understand Failures.
+### Monitor Smarter. Detect Earlier. Understand Failures.
 
 ---
 
@@ -18,9 +17,7 @@
 
 **SystemPulse** is an intelligent system monitoring platform that transforms raw service telemetry into meaningful system intelligence.
 
-Instead of simply displaying metrics, SystemPulse analyzes **response time, CPU usage, memory usage and telemetry trends** to detect anomalies, calculate risk, determine severity, identify potential root causes and recommend actions.
-
-The core pipeline is:
+Instead of simply displaying metrics, SystemPulse analyzes **response time, CPU usage, memory usage, and telemetry trends** to detect anomalies, calculate risk, determine severity, identify potential root causes, and recommend actions.
 
 **Telemetry → Risk Analysis → Anomaly Detection → Intelligence → Action**
 
@@ -28,31 +25,19 @@ The core pipeline is:
 
 # ✨ Features
 
-✅ Real-time system telemetry collection
-
-✅ Intelligent anomaly detection
-
-✅ 0–100 predictive risk scoring
-
-✅ Early degradation detection
-
-✅ Trend analysis
-
-✅ Severity classification
-
-✅ Root-cause reasoning
-
-✅ Action recommendations
-
-✅ Controlled anomaly simulation
-
-✅ Recovery detection
-
-✅ Historical intelligence tracking
-
-✅ Interactive React dashboard
-
-✅ Dark enterprise observability UI
+- Real-time system telemetry collection
+- Intelligent anomaly detection
+- 0–100 risk scoring
+- Early degradation detection
+- Trend analysis
+- Severity classification
+- Root-cause reasoning
+- Recommended actions
+- Controlled anomaly simulation
+- Recovery detection
+- Historical intelligence tracking
+- Interactive React dashboard
+- Dark enterprise observability UI
 
 ---
 
@@ -66,7 +51,7 @@ SystemPulse evaluates multiple system signals simultaneously.
 - CPU Utilization
 - Memory Utilization
 - Service Health
-- Risk
+- Risk Score
 - Metric Trends
 
 ### Severity Levels
@@ -80,375 +65,448 @@ SystemPulse evaluates multiple system signals simultaneously.
 
 ### Trend States
 
-```text
-MIXED / STABLE
-DETERIORATING
-RECOVERING
-Root Cause Detection
+    MIXED / STABLE
+    DETERIORATING
+    RECOVERING
+
+### Root Cause Detection
 
 SystemPulse can identify conditions such as:
 
-Combined resource pressure
-CPU pressure
-Memory pressure
-Latency degradation
-Early latency degradation
-No significant issue
+    Combined resource pressure
+    CPU pressure
+    Memory pressure
+    Latency degradation
+    Early latency degradation
+    No significant issue
 
 Each detected issue is accompanied by an explanation and recommended action.
 
-🏗️ Project Architecture
-                         SYSTEMPULSE
+---
 
-                              │
-                              ▼
+# 🏗️ Project Architecture
 
-                    Product Service
-                       FastAPI :8002
-                              │
-                              ▼
-                    Telemetry Collector
-                              │
-                    ┌─────────┴─────────┐
-                    │                   │
-                    ▼                   ▼
-              telemetry.csv      Monitoring API
-                                      :8003
-                                        │
-                                        ▼
-                              Intelligence Engine
-                                        │
-                         ┌──────────────┼──────────────┐
-                         │              │              │
-                         ▼              ▼              ▼
-                       Risk           Trend        Root Cause
-                      Analysis       Analysis       Reasoning
-                         │              │              │
-                         └──────────────┼──────────────┘
-                                        │
-                                        ▼
-                              System Intelligence
-                                        │
-                                        ▼
-                                  React Frontend
-                                        │
-                         ┌──────────────┼──────────────┐
-                         ▼              ▼              ▼
-                  Command Center   Intelligence    Telemetry
-                                        │
-                                        ▼
-                                   Simulator
+    SYSTEMPULSE
+         │
+         ▼
+    Product Service
+    FastAPI :8002
+         │
+         ▼
+    Telemetry Collector
+         │
+    ┌────┴────────────┐
+    │                 │
+    ▼                 ▼
+    telemetry.csv     Monitoring API
+                      :8003
+                        │
+                        ▼
+                Intelligence Engine
+                        │
+             ┌──────────┼──────────┐
+             │          │          │
+             ▼          ▼          ▼
+           Risk       Trend      Root Cause
+         Analysis    Analysis     Reasoning
+             │          │          │
+             └──────────┼──────────┘
+                        │
+                        ▼
+                System Intelligence
+                        │
+                        ▼
+                  React Frontend
+                        │
+             ┌──────────┼──────────┐
+             ▼          ▼          ▼
+        Command      Intelligence  Telemetry
+        Center           │
+                         ▼
+                     Simulator
 
+---
 
-🔄 How SystemPulse Works
-The Product Service generates real application activity.
-The Collector measures response time, CPU and memory.
-Telemetry is sent to the Monitoring API.
-The Intelligence Engine analyzes the incoming metrics.
-SystemPulse calculates a unified risk score.
-Anomalies and system trends are identified.
-The engine determines the likely root cause.
-A recommended action is generated.
-The React dashboard visualizes the intelligence.
+# 🔄 How SystemPulse Works
 
+1. The Product Service generates real application activity.
+2. The Collector measures response time, CPU, and memory.
+3. Telemetry is sent to the Monitoring API.
+4. The Intelligence Engine analyzes incoming metrics.
+5. SystemPulse calculates a unified risk score.
+6. Anomalies and system trends are identified.
+7. The engine determines the likely root cause.
+8. A recommended action is generated.
+9. The React dashboard visualizes the resulting intelligence.
 
-🚨 Anomaly Simulation
+---
+
+# 🚨 Anomaly Simulation
 
 SystemPulse includes a controlled failure simulator for demonstrating real system degradation.
 
-        HEALTHY
-           │
-           ▼
-      INJECT ANOMALY
-           │
-           ▼
-         DETECT
-           │
-           ▼
-        CRITICAL
-           │
-           ▼
-         RECOVER
-           │
-           ▼
-        HEALTHY
+    HEALTHY
+       │
+       ▼
+    INJECT ANOMALY
+       │
+       ▼
+    DETECT
+       │
+       ▼
+    CRITICAL
+       │
+       ▼
+    RECOVER
+       │
+       ▼
+    HEALTHY
 
-The simulator uses the actual backend rather than fake frontend animations.
-
-Example
+The simulator uses the **actual backend** rather than fake frontend animations.
 
 When slow mode is enabled:
 
-Response Time
-     ↓
-~50 ms → ~2000 ms
+    Response Time
+    ~50 ms → ~2000 ms
 
-Risk
-     ↓
-LOW → CRITICAL
+    Risk
+    LOW → CRITICAL
 
-System
-     ↓
-HEALTHY → ANOMALY
+    System
+    HEALTHY → ANOMALY
 
-When normal mode is restored, the system observes the telemetry again and returns toward NORMAL.
+When normal mode is restored, SystemPulse observes the new telemetry and tracks the system back toward `NORMAL`.
 
+---
 
-🧠 Intelligence Engine
+# 🧠 Intelligence Engine
 
-The SystemPulseIntelligence engine is the core reasoning layer.
+The `SystemPulseIntelligence` engine acts as the core reasoning layer.
 
-Input
-response_time_ms
-cpu_percent
-memory_percent
-Processing
-Baseline Comparison
-        ↓
-Component Risk
-        ↓
-Trend Analysis
-        ↓
-Cross-Metric Analysis
-        ↓
-Final Risk Score
-        ↓
-Severity + Anomaly
-        ↓
-Root Cause
-        ↓
-Recommended Action
-Output
-Risk
-Anomaly
-Severity
-Trend
-Root Cause
-Explanation
-Recommended Action
+### Input
 
+    response_time_ms
+    cpu_percent
+    memory_percent
 
-📊 Example Intelligence Result
-{
-  "response_time_ms": 2057.35,
-  "cpu_percent": 20.8,
-  "memory_percent": 78.4,
-  "risk": 70.4,
-  "anomaly": true,
-  "severity": "CRITICAL",
-  "trend": "DETERIORATING",
-  "root_cause": "Latency degradation",
-  "recommended_action": "Investigate slow requests and bottlenecks."
-}
+### Processing
+
+    Incoming Metrics
+           ↓
+    Baseline Comparison
+           ↓
+    Component Risk
+           ↓
+    Trend Analysis
+           ↓
+    Cross-Metric Analysis
+           ↓
+    Final Risk Score
+           ↓
+    Severity + Anomaly
+           ↓
+    Root Cause
+           ↓
+    Recommended Action
+
+### Output
+
+    Risk
+    Anomaly
+    Severity
+    Trend
+    Root Cause
+    Explanation
+    Recommended Action
+
+---
+
+# 📊 Example Intelligence Result
+
+    {
+      "response_time_ms": 2057.35,
+      "cpu_percent": 20.8,
+      "memory_percent": 78.4,
+      "risk": 70.4,
+      "anomaly": true,
+      "severity": "CRITICAL",
+      "trend": "DETERIORATING",
+      "root_cause": "Latency degradation",
+      "recommended_action": "Investigate slow requests and bottlenecks."
+    }
 
 This transforms a raw telemetry reading into an interpretable system decision.
 
-🖥️ Frontend
+---
 
-SystemPulse uses a dark enterprise observability interface designed specifically for monitoring system health.
+# 🖥️ Frontend
 
-Command Center
-Main dashboard for monitoring the entire system at a glance.
-Shows overall system health, current risk, severity, and service status.
-Displays key live metrics like response time, CPU, and memory.
-Provides a quick overview of the latest intelligence result.
-Acts as the central control room of SystemPulse.
+SystemPulse uses a **dark enterprise observability interface** designed specifically for monitoring system health.
 
-<img width="1909" height="909" alt="image" src="https://github.com/user-attachments/assets/c092d7d0-8537-48ee-b94d-2c15f914d163" />
+## Command Center
 
+The main operational dashboard for monitoring the entire system at a glance.
 
-Anomaly Simulator
-Controlled environment to demonstrate SystemPulse anomaly detection.
-Allows the user to inject a performance anomaly into the Product Service.
-Shows the lifecycle: Healthy → Detect → Critical → Recover → Healthy.
-Every stage is driven by real backend telemetry and intelligence.
-Demonstrates how SystemPulse detects and tracks a real degradation.
+- Overall system health
+- Current risk and severity
+- Live response time, CPU, and memory
+- Latest intelligence result
+- Service status
 
-<img width="1907" height="910" alt="image" src="https://github.com/user-attachments/assets/8b71c52a-b1e6-4063-8876-0bd07d9f2b77" />
+Acts as the **central control room** of SystemPulse.
 
+---
 
-Intelligence Engine
-Displays the system's interpreted intelligence rather than raw metrics.
-Shows risk score, anomaly status, severity, and trend.
-Identifies the likely root cause of the detected problem.
-Provides an explanation and recommended action.
-This is where telemetry is transformed into actionable system intelligence.
+## Anomaly Simulator
 
-<img width="1905" height="906" alt="image" src="https://github.com/user-attachments/assets/1a624bb5-c276-45f4-a5ec-8f7fa704db33" />
+A controlled environment for demonstrating SystemPulse anomaly detection.
 
+- Inject a performance anomaly
+- Monitor real-time system degradation
+- Observe Healthy → Detect → Critical → Recover
+- Uses real backend telemetry and intelligence
+- Demonstrates the complete monitoring lifecycle
 
-Telemetry
-Displays the historical telemetry collected from the Product Service.
-Tracks response time, CPU utilization, and memory utilization.
-Uses charts to visualize metric behavior over time.
-Helps identify performance changes and degradation patterns.
-Provides the underlying data used by the Intelligence Engine.
+---
 
-<img width="1904" height="911" alt="image" src="https://github.com/user-attachments/assets/3e58dd4c-c693-4bd4-8d2a-8dde91478434" />
+## Intelligence Engine
 
+The intelligence-focused view of SystemPulse.
 
-🛠️ Tech Stack
-Frontend	Backend	Intelligence	Database
-React	Python	NumPy	PostgreSQL
-Vite	FastAPI	Pandas	psycopg2
-Tailwind CSS	Uvicorn	Risk Analysis	CSV
-React Router	Pydantic	Trend Analysis	
-Recharts		Root Cause Reasoning	
-Lucide React			
-📂 Project Structure
-systempulse/
-│
-├── demo-system/
-│   └── product-service/
-│       └── main.py
-│
-├── systempulse/
-│   │
-│   ├── collector/
-│   │   ├── collector.py
-│   │   ├── intelligence_engine.py
-│   │   ├── anomaly_detector.py
-│   │   ├── degradation_detector.py
-│   │   ├── root_cause_engine.py
-│   │   └── telemetry.csv
-│   │
-│   └── monitoring-api/
-│       └── main.py
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── config/
-│   │   ├── hooks/
-│   │   ├── layouts/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   └── utils/
-│   │
-│   ├── index.html
-│   ├── package.json
-│   └── vite.config.js
-│
-└── README.md
-🔌 API Endpoints
-Monitoring API
-GET  /health
-GET  /api/metrics/latest
-POST /api/metrics
-GET  /api/intelligence/latest
-GET  /api/intelligence/history
-Product Service
-GET  /
-GET  /products
-GET  /products/{product_id}
+- Risk score and anomaly status
+- Severity and trend
+- Root cause identification
+- Explanation of the detected issue
+- Recommended corrective action
 
-POST /simulate/slow
-POST /simulate/normal
-📸 Screenshots
-Command Center
+This is where raw telemetry becomes **actionable system intelligence**.
 
-Add Command Center screenshot here
+---
 
-Intelligence Dashboard
+## Telemetry
 
-Add Intelligence page screenshot here
+The historical monitoring view of the system.
 
-Telemetry Dashboard
+- Response-time history
+- CPU utilization
+- Memory utilization
+- Metric trends over time
+- Historical observations used by the Intelligence Engine
 
-Add Telemetry screenshot here
+---
 
-Anomaly Simulator
+# 🛠️ Tech Stack
 
-Add Simulator screenshot here
+| Frontend | Backend | Intelligence | Database |
+|----------|---------|--------------|----------|
+| React | Python | NumPy | PostgreSQL |
+| Vite | FastAPI | Pandas | psycopg2 |
+| Tailwind CSS | Uvicorn | Risk Analysis | CSV |
+| React Router | Pydantic | Trend Analysis | |
+| Recharts | | Root Cause Reasoning | |
+| Lucide React | | | |
 
-⚙️ Installation
-Clone Repository
-git clone https://github.com/your-username/systempulse.git
+---
 
-cd systempulse
-▶️ Run the Backend
-Product Service
-cd demo-system/product-service
+# 📂 Project Structure
 
-uvicorn main:app --reload --port 8002
-Monitoring API
-cd systempulse/monitoring-api
+    systempulse/
+    │
+    ├── demo-system/
+    │   └── product-service/
+    │       └── main.py
+    │
+    ├── systempulse/
+    │   │
+    │   ├── collector/
+    │   │   ├── collector.py
+    │   │   ├── intelligence_engine.py
+    │   │   ├── anomaly_detector.py
+    │   │   ├── degradation_detector.py
+    │   │   ├── root_cause_engine.py
+    │   │   └── telemetry.csv
+    │   │
+    │   └── monitoring-api/
+    │       └── main.py
+    │
+    ├── frontend/
+    │   ├── src/
+    │   │   ├── components/
+    │   │   ├── config/
+    │   │   ├── hooks/
+    │   │   ├── layouts/
+    │   │   ├── pages/
+    │   │   ├── services/
+    │   │   └── utils/
+    │   │
+    │   ├── index.html
+    │   ├── package.json
+    │   └── vite.config.js
+    │
+    └── README.md
 
-uvicorn main:app --host 127.0.0.1 --port 8003 --reload
-Telemetry Collector
-cd systempulse/collector
+---
 
-python collector.py
-💻 Run the Frontend
-cd frontend
+# 🔌 API Endpoints
 
-npm install
+## Monitoring API
 
-npm run dev
+    GET  /health
+    GET  /api/metrics/latest
+    POST /api/metrics
+    GET  /api/intelligence/latest
+    GET  /api/intelligence/history
+
+## Product Service
+
+    GET  /
+    GET  /products
+    GET  /products/{product_id}
+
+    POST /simulate/slow
+    POST /simulate/normal
+
+---
+
+# 📸 Screenshots
+
+## Command Center
+
+<img width="1909" height="909" alt="SystemPulse Command Center" src="https://github.com/user-attachments/assets/c092d7d0-8537-48ee-b94d-2c15f914d163" />
+
+---
+
+## Anomaly Simulator
+
+<img width="1907" height="910" alt="SystemPulse Anomaly Simulator" src="https://github.com/user-attachments/assets/8b71c52a-b1e6-4063-8876-0bd07d9f2b77" />
+
+---
+
+## Intelligence Dashboard
+
+<img width="1905" height="906" alt="SystemPulse Intelligence Dashboard" src="https://github.com/user-attachments/assets/1a624bb5-c276-45f4-a5ec-8f7fa704db33" />
+
+---
+
+## Telemetry Dashboard
+
+<img width="1904" height="911" alt="SystemPulse Telemetry Dashboard" src="https://github.com/user-attachments/assets/3e58dd4c-c693-4bd4-8d2a-8dde91478434" />
+
+---
+
+# ⚙️ Installation
+
+## Clone Repository
+
+    git clone https://github.com/your-username/systempulse.git
+    cd systempulse
+
+---
+
+# ▶️ Run the Backend
+
+## Product Service
+
+    cd demo-system/product-service
+    uvicorn main:app --reload --port 8002
+
+## Monitoring API
+
+    cd systempulse/monitoring-api
+    uvicorn main:app --host 127.0.0.1 --port 8003 --reload
+
+## Telemetry Collector
+
+    cd systempulse/collector
+    python collector.py
+
+---
+
+# 💻 Run the Frontend
+
+    cd frontend
+    npm install
+    npm run dev
 
 Open:
 
-http://localhost:5173
-📈 Example Detection Lifecycle
-                         NORMAL
-                            │
-                            ▼
-                    Inject Anomaly
-                            │
-                            ▼
-                         DETECT
-                            │
-                            ▼
-                        CRITICAL
-                            │
-                            ▼
-                    Restore System
-                            │
-                            ▼
-                        RECOVER
-                            │
-                            ▼
-                          NORMAL
+    http://localhost:5173
 
-All major states are derived from actual telemetry and backend intelligence.
+---
 
-🚀 Future Improvements
-Machine-learning-based anomaly detection
-Time-series forecasting
-Persistent telemetry database
-Real-time alert notifications
-Incident management
-Automated remediation
-Distributed service monitoring
-Multi-service dependency analysis
-Cloud deployment
-Production observability integrations
+# 📈 Example Detection Lifecycle
 
+    NORMAL
+       │
+       ▼
+    Inject Anomaly
+       │
+       ▼
+    DETECT
+       │
+       ▼
+    CRITICAL
+       │
+       ▼
+    Restore System
+       │
+       ▼
+    RECOVER
+       │
+       ▼
+    NORMAL
 
-💡 Why SystemPulse?
+All major states are derived from **actual telemetry and backend intelligence**.
+
+---
+
+# 🚀 Future Improvements
+
+- Machine-learning-based anomaly detection
+- Time-series forecasting
+- Persistent telemetry database
+- Real-time alert notifications
+- Incident management
+- Automated remediation
+- Distributed service monitoring
+- Multi-service dependency analysis
+- Cloud deployment
+- Production observability integrations
+
+---
+
+# 💡 Why SystemPulse?
 
 Traditional monitoring answers:
 
-"What are the metrics?"
+> **"What are the metrics?"**
 
 SystemPulse aims to answer:
 
-"What is happening, how serious is it, why is it happening, and what should we do?"
+> **"What is happening, how serious is it, why is it happening, and what should we do?"**
 
-🎯 Project Vision
+---
 
-SystemPulse aims to transform traditional monitoring from a passive metrics dashboard into an intelligent decision-support system.
+# 🎯 Project Vision
 
-OBSERVE
-   ↓
-UNDERSTAND
-   ↓
-ACT
+SystemPulse aims to transform traditional monitoring from a passive metrics dashboard into an **intelligent decision-support system**.
 
-SystemPulse — From system metrics to system intelligence.
+    OBSERVE
+       ↓
+    UNDERSTAND
+       ↓
+    ACT
 
-##👨‍💻 Author
+### SystemPulse — From System Metrics to System Intelligence.
 
-#Mariya Shaikh
+---
+
+# 👨‍💻 Author
+
+**Mariya Shaikh**
 
 BTech Information Technology Student
+
+---
+
+### ⭐ If you found this project useful, consider starring the repository.
