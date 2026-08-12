@@ -61,6 +61,9 @@ Instead of simply displaying CPU, memory and latency numbers, SystemPulse analyz
 
 ---
 
+
+
+
 # 🧠 How SystemPulse Works
 
 ```text
@@ -91,30 +94,38 @@ Instead of simply displaying CPU, memory and latency numbers, SystemPulse analyz
               ▼
        📊 SYSTEMPULSE
 ⚡ Core Features
+
 📊 System Monitoring
+
 Track important system metrics including:
 Response latency
 CPU usage
 Memory usage
 Service health
 Historical performance
+
 🚨 Anomaly Detection
 Automatically identifies unusual system behavior and classifies potential issues.
+
 ⚠️ Risk & Severity Analysis
 SystemPulse converts monitoring data into understandable risk levels and severity states.
+
 🧠 Root-Cause Insights
 Instead of only reporting an anomaly, the system provides a possible explanation for the issue.
+
 💡 Recommended Actions
 Each detected problem can include a suggested next step for investigation.
+
 📈 Trend Detection
 Analyze whether the system is:
 Recovering
 Stable
 Degrading
 Experiencing latency spikes
-💚 Service Monitoring
+
+ Service Monitoring
 Monitor the health of backend services and APIs from a centralized dashboard.
-🔥 Example Detection
+ Example Detection
 SystemPulse can transform raw telemetry like:
 {
   "response_time_ms": 235.06,
@@ -124,7 +135,7 @@ SystemPulse can transform raw telemetry like:
   "anomaly": true
 }
 into something meaningful:
-🚨 EARLY WARNING
+ EARLY WARNING
 
 Root Cause
 Latency degradation
@@ -137,16 +148,29 @@ Recommended Action
 Investigate slow requests, database operations,
 network delays and bottlenecks.
 From raw metrics → to actionable intelligence.
-🖥️ Dashboard
-Overview
-�
-Services
-�
-Monitoring
-�
-Analytics
-�
-Add your screenshots to the screenshots/ folder using the filenames above.
+
+
+## 🖥️ Screenshots
+
+### Command center 
+<img width="1902" height="839" alt="image" src="https://github.com/user-attachments/assets/26f3df02-d9cd-4ad3-b91f-afde4e99fd89" />
+
+
+### Simulator
+<img width="1910" height="836" alt="image" src="https://github.com/user-attachments/assets/3c1d0251-234e-42ae-ac71-5c0ed134a49d" />
+
+
+### Intelligence
+<img width="1914" height="833" alt="image" src="https://github.com/user-attachments/assets/8059d557-4963-41cd-8a9e-f50c9fd62724" />
+
+
+### Telemetry
+<img width="1905" height="830" alt="image" src="https://github.com/user-attachments/assets/3e3095c8-40cb-4ece-8512-2ca418e6a7b5" />
+
+
+---
+
+
 🏗️ Architecture
                     ┌────────────────────┐
                     │   React + Vite     │
@@ -168,22 +192,25 @@ Add your screenshots to the screenshots/ folder using the filenames above.
                             │
                             ▼
                     📊 Monitoring Engine
+
+
 🛠️ Tech Stack
+
 Frontend
 ⚛️ React
-⚡ Vite
-🎨 Tailwind CSS
-🧩 Lucide Icons
-Backend
-🐍 Python
-🚀 FastAPI
-🔌 REST APIs
-Database
+•Vite
+•Tailwind CSS
+•Lucide Icons
+•Backend
+•Python
+•FastAPI
+•REST APIs
+•Database
 🐘 PostgreSQL
 Deployment
 🔥 Firebase Hosting
-☁️ Render
-🐙 GitHub
+ Render
+ GitHub
 📁 Project Structure
 Systempulse/
 │
@@ -202,6 +229,7 @@ Systempulse/
 │
 ├── .gitignore
 └── README.md
+
 🚀 Run Locally
 git clone https://github.com/mariyashaikh-crypto/Systempulse.git
 
@@ -212,12 +240,18 @@ npm install
 npm run dev
 Production Build
 npm run build
+
 ☁️ Deployment
+
 The frontend is deployed using Firebase Hosting.
 The backend services are deployed separately and communicate with the frontend through configured API endpoints and environment variables.
+
 🌐 Production
+
 https://project-live-b2595.web.app⁠�
+
 🎯 Why SystemPulse?
+
 Traditional monitoring gives developers numbers.
 SystemPulse tries to give them answers.
 WHAT?
@@ -248,9 +282,15 @@ Detect → Understand → Act
 🎥 Project Demo
 ▶️ Watch SystemPulse in Action
 YouTube Demo
+
 The walkthrough covers the dashboard, service health, monitoring metrics, anomaly detection, risk analysis, historical data and the deployed application.
+
+
+
 👨‍💻 Author
+
 Shaik Mariya
-Full-Stack Developer building projects around AI, intelligent systems, monitoring and modern web technologies.
+
+
 🔗 GitHub:
 https://github.com/mariyashaikh-crypto⁠�
