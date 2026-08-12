@@ -243,11 +243,11 @@ Recommended Action
 
 This transforms a raw telemetry reading into an interpretable system decision.
 
-##🖥️ Frontend
+🖥️ Frontend
 
 SystemPulse uses a dark enterprise observability interface designed specifically for monitoring system health.
 
-#Command Center
+Command Center
 Main dashboard for monitoring the entire system at a glance.
 Shows overall system health, current risk, severity, and service status.
 Displays key live metrics like response time, CPU, and memory.
@@ -257,7 +257,7 @@ Acts as the central control room of SystemPulse.
 <img width="1909" height="909" alt="image" src="https://github.com/user-attachments/assets/c092d7d0-8537-48ee-b94d-2c15f914d163" />
 
 
-#Anomaly Simulator
+Anomaly Simulator
 Controlled environment to demonstrate SystemPulse anomaly detection.
 Allows the user to inject a performance anomaly into the Product Service.
 Shows the lifecycle: Healthy → Detect → Critical → Recover → Healthy.
@@ -267,7 +267,7 @@ Demonstrates how SystemPulse detects and tracks a real degradation.
 <img width="1907" height="910" alt="image" src="https://github.com/user-attachments/assets/8b71c52a-b1e6-4063-8876-0bd07d9f2b77" />
 
 
-#Intelligence Engine
+Intelligence Engine
 Displays the system's interpreted intelligence rather than raw metrics.
 Shows risk score, anomaly status, severity, and trend.
 Identifies the likely root cause of the detected problem.
@@ -277,7 +277,7 @@ This is where telemetry is transformed into actionable system intelligence.
 <img width="1905" height="906" alt="image" src="https://github.com/user-attachments/assets/1a624bb5-c276-45f4-a5ec-8f7fa704db33" />
 
 
-#Telemetry
+Telemetry
 Displays the historical telemetry collected from the Product Service.
 Tracks response time, CPU utilization, and memory utilization.
 Uses charts to visualize metric behavior over time.
